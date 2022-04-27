@@ -1,0 +1,14 @@
+public class Area {
+    public static Double circle(Double r){
+        System.debug('Area of Circle : '+3.14*r*r);
+        return 3.14*r*r;
+    }
+    public static Double rectangle(Double l,Double b){
+        System.debug('Area of Rectangle : '+l*b);
+        return l*b;
+    }
+    public static Double triangle(Double base,Double height){
+        System.debug('Area of Triangle : '+base*height*0.5);
+        return base*height*0.5;
+    }
+}
