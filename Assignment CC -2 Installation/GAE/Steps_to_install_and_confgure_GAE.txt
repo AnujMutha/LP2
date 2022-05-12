@@ -12,6 +12,10 @@
 	-> test.py (the script that we will get in repsonse)
 	-> app.yaml (Consist of default configs of your project)
 
+* Make sure that you have dev_appserver.py in google-sdk/bin/ folder
+
+> now run following command to run the app > dev_appserver.py /home/user/ProjectFolderName  
+
 *****************************************************
 test.py - contents
 *****************************************************
