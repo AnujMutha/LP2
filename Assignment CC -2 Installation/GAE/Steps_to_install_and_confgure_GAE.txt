@@ -1,0 +1,38 @@
+>curl https://sdk.cloud.google.com | bash
+
+	Just hit enter if you are asked to choose directory
+
+>gcloud init --console-only
+
+> paste the link in browser and select account to continue with .
+> get the auth code and paste it in CMD
+
+>Create a folder with following structure
+
+	-> test.py (the script that we will get in repsonse)
+	-> app.yaml (Consist of default configs of your project)
+
+*****************************************************
+test.py - contents
+*****************************************************
+import webapp2
+
+class MainPage(webapp2.RequestHandler):
+    def get(self):
+        self.response.write("Hello World..!")
+
+app = webapp2.WSGIApplication([('/',MainPage)], debug=true)
+
+
+
+*****************************************************
+app.yaml - contents
+*****************************************************
+
+runtime: python27
+api_version: 1
+threadsafe: false 
+
+handlers:
+- url: /
+  script: hello_word.app
