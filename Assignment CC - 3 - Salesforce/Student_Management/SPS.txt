@@ -1,0 +1,10 @@
+public class SPS {
+    public String name;
+    public String address;
+    public Integer id;
+    public SPS(String name, String address, Integer id){
+        this.name = name;
+        this.address = address;
+        this.id = id;
+    }
+}
