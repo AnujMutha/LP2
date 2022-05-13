@@ -20,6 +20,7 @@ def add_student():
     print("-------------------------")
     print("Add Student Information")
     print("-------------------------")
+
     global student_fields
     global student_database
  
@@ -150,6 +151,7 @@ while True:
     display_menu()
  
     choice = input("Enter your choice: ")
+    
     if choice == '1':
         add_student()
     elif choice == '2':
