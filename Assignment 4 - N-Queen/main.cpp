@@ -2,11 +2,9 @@
 using namespace std;
 int grid[10][10];
 void print(int n) {
-    for (int i = 0;i <= n-1; i++) {
-        for (int j = 0;j <= n-1; j++) {
-            
-                cout <<grid[i][j]<< " ";
-            
+    for (int i = 0;i < n; i++) {
+        for (int j = 0;j <n; j++) {
+            cout <<grid[i][j]<< " ";
         }
         cout<<endl;
     }
@@ -14,7 +12,7 @@ void print(int n) {
     cout<<endl;
 }
 bool isSafe(int col, int row, int n) {
-  //check for same column
+    //check for same column
     for (int i = 0; i < row; i++) {
         if (grid[i][col]) {
             return false;
@@ -41,7 +39,7 @@ bool solve (int n, int row) {
         return true;
     }
     bool res = false;
-    for (int i = 0;i <=n-1;i++) {
+    for (int i = 0;i <n;i++) {
         if (isSafe(i, row, n)) {
             grid[row][i] = 1;
             res = solve(n, row+1) || res;
@@ -52,21 +50,19 @@ bool solve (int n, int row) {
 }
 int main()
 {
-  ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-        int n;
-        cout<<"Enter the number of queen"<<endl;
-        cin >> n;
-        for (int i = 0;i < n;i++) {
-            for (int j = 0;j < n;j++) {
-                grid[i][j] = 0;
-            }
+    int n;
+    cout<<"Enter the number of queen"<<endl;
+    cin >> n;
+    for (int i = 0;i < n;i++) {
+        for (int j = 0;j < n;j++) {
+            grid[i][j] = 0;
         }
-        bool res = solve(n, 0);
-        if(res == false) {
-            cout << -1 << endl; 
-        } else {
-            cout << endl;
-        }
-  return 0;
+    }
+    bool res = solve(n, 0);
+    if(!res) {
+        cout << -1 << endl;
+    } else {
+        cout << endl;
+    }
+    return 0;
 }
